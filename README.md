@@ -47,3 +47,10 @@ Throws `TypeError` if any argument is invalid.
 - `breaker.recordSuccess()` — records a successful call. In closed state resets the failure count; in half-open state closes the breaker.
 - `breaker.recordFailure()` — records a failed call. In closed state increments the failure count and may open the breaker; in half-open state reopens the breaker.
 - `breaker.reset()` — forces the breaker back to closed state and clears the failure count.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
