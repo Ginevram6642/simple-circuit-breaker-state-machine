@@ -1,6 +1,6 @@
 {
   "name": "simple-circuit-breaker-state-machine",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Circuit breaker state machine for controlling calls based on failure counts.",
   "type": "module",
   "main": "src/index.js",
